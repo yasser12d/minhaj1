@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>منهاج القراءة</title>
+<meta name="description" content="خطة قراءة متدرجة في الفلسفة وعلم الاجتماع والسياسة وتاريخ أوروبا ومقارنة الأديان، على طريقة مراتب الطلب: من المختصر إلى المطوّل.">
+<meta property="og:title" content="منهاج القراءة">
+<meta property="og:description" content="صمّم خطة قراءتك، وتابع صفحاتك، وحاسب النص، ودوّن أسئلتك.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Noto+Naskh+Arabic:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;padding:0}
+img{max-width:100%}
+[hidden]:not([hidden=until-found i]){display:none!important}
+/* Layout: a reader's workbench — controls in a narrow margin column, the plan as the main page; four tabs follow the reading cycle */
+:root{
+  --bg:#EDF0EE; --surface:#F9FAF8; --sunk:#E3E8E5; --line:#C9D1CC;
+  --ink:#1B262E; --muted:#56646C; --accent:#2D3F8C; --accent-ink:#FFFFFF;
+  --gold:#B07A12; --ok:#2E7A4F; --warn:#A8501C;
+  --s1:#2D3F8C; --s2:#6B7FD0; --s3:#B07A12; --s4:#2E7A62;
+  --f-display:"Reem Kufi","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --f-body:"Noto Naskh Arabic","Geeza Pro","Times New Roman",serif;
+  --f-ui:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
+  --r:10px; color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11171B; --surface:#182026; --sunk:#0D1215; --line:#2C3740;
+  --ink:#E3E8E5; --muted:#9AA8B0; --accent:#8FA0F2; --accent-ink:#0E1430;
+  --gold:#E2AE45; --ok:#6CC594; --warn:#E8915C;
+  --s1:#8FA0F2; --s2:#5466B8; --s3:#E2AE45; --s4:#5FC2A4; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11171B; --surface:#182026; --sunk:#0D1215; --line:#2C3740;
+  --ink:#E3E8E5; --muted:#9AA8B0; --accent:#8FA0F2; --accent-ink:#0E1430;
+  --gold:#E2AE45; --ok:#6CC594; --warn:#E8915C;
+  --s1:#8FA0F2; --s2:#5466B8; --s3:#E2AE45; --s4:#5FC2A4; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:15px;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding-block:20px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;text-wrap:balance;margin:0;line-height:1.3}
+p{margin:0}
+a{color:var(--accent)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.top{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px}
+.brand h1{font-size:2.1rem;letter-spacing:0}
+.brand p{color:var(--muted);font-size:.92rem;margin-top:2px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:var(--surface)}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--muted);display:inline-block}
+.pill.ok i{background:var(--ok)}
+.tabs{display:flex;gap:4px;margin-block:18px 22px;overflow-x:auto;border-bottom:1px solid var(--line)}
+.tab{background:none;border:0;border-bottom:3px solid transparent;padding:10px 14px 9px;cursor:pointer;color:var(--muted);font-weight:500;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
+.tab small{display:block;font-size:.72rem;font-weight:400}
+.grid{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:18px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.label{font-size:.8rem;font-weight:600;color:var(--muted)}
+.seg{display:flex;flex-wrap:wrap;gap:4px;background:var(--sunk);border-radius:8px;padding:3px}
+.seg button{flex:1 1 auto;border:0;background:transparent;border-radius:6px;padding:6px 10px;cursor:pointer;color:var(--muted);font-size:.88rem}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0 / .12);font-weight:600}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.rangeval{font-variant-numeric:tabular-nums;font-weight:600}
+.hint{font-size:.8rem;color:var(--muted)}
+.qopt{display:flex;gap:8px;align-items:flex-start;padding:8px 10px;border:1px solid var(--line);border-radius:8px;cursor:pointer;font-family:var(--f-body);font-size:.98rem;line-height:1.5}
+.qopt:has(input:checked){border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.qopt input{margin-top:6px;accent-color:var(--accent)}
+textarea,input[type=text],input[type=number],input[type=search],select{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+textarea{font-family:var(--f-body);font-size:1rem;line-height:1.7;resize:vertical;min-height:70px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:500}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.small{padding:4px 10px;font-size:.82rem}
+.btn:disabled{opacity:.55;cursor:default}
+.lens{font-family:var(--f-body);font-size:1.25rem;line-height:1.6;border-inline-start:4px solid var(--gold);padding-inline-start:14px}
+.lens small{display:block;font-family:var(--f-ui);font-size:.78rem;color:var(--muted)}
+.stats{display:flex;flex-wrap:wrap;gap:8px 28px}
+.stat b{display:block;font-family:var(--f-display);font-size:1.6rem;font-variant-numeric:tabular-nums;line-height:1.2}
+.stat span{font-size:.8rem;color:var(--muted)}
+.timeline{display:flex;flex-direction:column;gap:6px}
+.track{display:flex;gap:2px;height:30px;border-radius:6px;overflow:hidden}
+.track div{min-width:4px;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;overflow:hidden;white-space:nowrap}
+.ticks{position:relative;height:18px;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.ticks span{position:absolute;top:0;transform:translateX(50%)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.8rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-inline-end:6px;vertical-align:middle}
+.stage{display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:1px solid var(--line)}
+.stagehead{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.rank{font-family:var(--f-display);font-size:.85rem;color:var(--accent);white-space:nowrap}
+.stage h3{font-size:1.25rem}
+.job{font-family:var(--f-body);color:var(--muted);font-size:.98rem}
+.produce{font-size:.85rem;background:var(--sunk);border-radius:8px;padding:8px 12px}
+.produce b{color:var(--gold)}
+.book{display:grid;grid-template-columns:4px minmax(0,1fr) auto;gap:12px;align-items:start;padding:10px 0}
+.book .bar{align-self:stretch;border-radius:2px}
+.book .t{font-family:var(--f-body);font-size:1.08rem;font-weight:600;line-height:1.45}
+.book .a{font-size:.85rem;color:var(--muted)}
+.book .why{font-family:var(--f-body);font-size:.95rem;margin-top:4px}
+.book .meta{text-align:end;font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.book .meta b{display:block;color:var(--ink);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.tag{font-size:.72rem;border-radius:4px;padding:1px 7px;background:var(--sunk);color:var(--muted)}
+.tag.core{color:var(--accent)}
+.tag.star{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold);font-weight:600}
+.tag.free{color:var(--ok)}
+.tag.ai{color:var(--warn)}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.empty{text-align:center;padding:40px 16px;display:flex;flex-direction:column;gap:10px;align-items:center;color:var(--muted)}
+.empty h3{color:var(--ink)}
+.progress{height:10px;background:var(--sunk);border-radius:999px;overflow:hidden;display:flex}
+.progress div{height:100%}
+.card{border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--surface)}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:12px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.row > *{min-width:0}
+.warnchip{font-size:.8rem;color:var(--warn)}
+.okchip{font-size:.8rem;color:var(--ok)}
+.q{display:flex;flex-direction:column;gap:6px}
+.q .qt{font-family:var(--f-body);font-weight:600;font-size:1.02rem}
+.check{display:flex;gap:8px;align-items:center;font-size:.85rem;color:var(--muted);cursor:pointer}
+.check input{accent-color:var(--accent)}
+.meter{display:flex;flex-direction:column;gap:6px}
+.meter .progress div{background:var(--accent);transition:width .3s}
+.ai{border:1px dashed var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:10px}
+.aiout{font-family:var(--f-body);font-size:1rem;line-height:1.8;white-space:pre-wrap}
+.gap{display:flex;flex-direction:column;gap:2px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.gap:last-child{border-bottom:0}
+.log .lq{font-family:var(--f-body);font-weight:600;font-size:1.05rem}
+.log .la{font-family:var(--f-body);font-size:.98rem}
+.count{font-variant-numeric:tabular-nums}
+.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.day{display:flex;flex-direction:column;align-items:center;gap:2px;border:1px solid var(--line);border-radius:8px;padding:6px 2px;cursor:pointer;background:var(--bg);font-size:.72rem;color:var(--muted)}
+.day b{font-size:.78rem;color:var(--ink);font-weight:600}
+.day i{font-style:normal;font-size:.7rem;border-radius:4px;padding:0 4px;color:var(--accent-ink)}
+.ty-read{background:var(--accent)} .ty-review{background:var(--gold)} .ty-open{background:var(--s4)} .ty-rest{background:var(--line);color:var(--ink)!important}
+.presets{display:flex;flex-wrap:wrap;gap:6px}
+.method{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:10px}
+.mcard{border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:6px;background:var(--bg)}
+.mcard h4{margin:0;font-family:var(--f-display);font-size:1rem;display:flex;gap:8px;align-items:center}
+.mcard h4 i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.mcard ol{margin:0;padding-inline-start:18px;font-family:var(--f-body);font-size:.95rem;line-height:1.7}
+.mcard ol span{color:var(--muted);font-family:var(--f-ui);font-size:.8rem;font-variant-numeric:tabular-nums}
+.week{display:flex;flex-direction:column;gap:8px}
+.wday{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;background:var(--surface)}
+.wday.today{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.wday .dn{font-family:var(--f-display);font-size:1.05rem}
+.wday .dd{font-size:.78rem;color:var(--muted)}
+.wday .wt{font-family:var(--f-body);font-size:1rem}
+.chip{font-size:.72rem;border-radius:4px;padding:1px 8px;color:var(--accent-ink);display:inline-block;margin-bottom:4px}
+@media (max-width:560px){.wday{grid-template-columns:1fr}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>منهاج القراءة</h1>
+      <p>خطة متدرجة في الفلسفة وعلم الاجتماع والسياسة وتاريخ أوروبا، على طريقة مراتب الطلب: من المختصر إلى المطوّل.</p>
+    </div>
+    <span class="pill" id="savePill"><i></i><span>محفوظ في هذا المتصفح</span></span>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="أقسام الأداة">
+    <button class="tab" role="tab" data-tab="build" aria-selected="true">صمّم الخطة<small>الحقل، الأيام، السؤال</small></button>
+    <button class="tab" role="tab" data-tab="week" aria-selected="false">جدول الأسبوع<small>ماذا تقرأ كل يوم</small></button>
+    <button class="tab" role="tab" data-tab="track" aria-selected="false">تابع القراءة<small>الصفحات وما أنتجته</small></button>
+    <button class="tab" role="tab" data-tab="ask" aria-selected="false">حاسب النص<small>أسئلة المساءلة والفهم</small></button>
+    <button class="tab" role="tab" data-tab="log" aria-selected="false">دفتر الأسئلة<small>الأسئلة العابرة بكلماتك</small></button>
+  </nav>
+
+  <main id="view"></main>
+</div>
+
+<script>
+/* ---------- data ---------- */
+const STAGES = {
+  phil:[
+    {key:"map",name:"الخريطة",job:"تعرف ما الأسئلة الفلسفية قبل أي اسم أو مذهب.",produce:"لخّص كل فصل في فقرة بلغتك، واكتب سؤالًا واحدًا بقي مفتوحًا."},
+    {key:"hist",name:"تاريخ الحقل",job:"هنا تتكوّن المرجعية: من ردّ على من، ولماذا ظهرت كل مدرسة في زمنها.",produce:"ارسم خطًا زمنيًا للمدارس، وبجانب كل مدرسة سؤالها وخصمها."},
+    {key:"texts",name:"النصوص الأصلية",job:"تقرأ أصحاب المدارس بأقلامهم، بعد أن صار عندك ما تقيسهم عليه.",produce:"جلسة نقاش أو مقالة عن سؤال واحد خرجت به من نص أصلي."},
+    {key:"meaning",name:"سؤال المعنى",job:"تنتقل من «ماذا قالوا» إلى «ماذا يعني هذا لي».",produce:"صفحة تكتب فيها جوابك أنت عن سؤالك المركزي."}],
+  soc:[
+    {key:"map",name:"الخريطة",job:"تعرف ما الذي يدرسه علم الاجتماع، وكيف يختلف عن الرأي الشائع.",produce:"اكتب ثلاثة أمثلة من حياتك اليومية فسّرها الكتاب تفسيرًا لم تكن تراه."},
+    {key:"hist",name:"المؤسسون والسياق",job:"من ابن خلدون إلى الآباء الأوروبيين: لماذا وُلد هذا العلم ومع أي أسئلة.",produce:"جدول للمؤسسين: سؤال كل واحد، ومفهومه المركزي، وعصره."},
+    {key:"texts",name:"النصوص الأصلية",job:"تقرأ دوركهايم وفيبر بأنفسهما، وتقارن منهجيهما.",produce:"مقالة تقارن تفسيرين لظاهرة واحدة من مجتمعك."},
+    {key:"ref",name:"المرجع والتطبيق",job:"مرجع شامل تقرؤه بالفصول حين يقودك سؤال، لا من الغلاف إلى الغلاف.",produce:"اختر فصلًا واحدًا وطبّقه على ظاهرة تراها حولك."}],
+  euro:[
+    {key:"medieval",name:"العصور الوسطى",job:"أوروبا قبل الحداثة: الكنيسة والإقطاع والحروب الصليبية. بدونها لا تفهم ما ثار عليه الناس لاحقًا.",produce:"خريطة ذهنية لعلاقة الكنيسة بالملوك والإقطاع، مع ثلاثة تواريخ مفصلية."},
+    {key:"renaissance",name:"النهضة والإصلاح",job:"كيف تزعزعت سلطة الكنيسة: عودة النصوص القديمة، والطباعة، وانشقاق البروتستانت.",produce:"خط زمني من ١٤٥٠ إلى ١٦٥٠، وبجانب كل حدث ما الذي تغيّر بسببه."},
+    {key:"revolutions",name:"عصر الثورات",job:"الثورة الفرنسية والثورة الصناعية: الثورتان اللتان صنعتا العالم الحديث.",produce:"مقالة: ما الذي غيّرته الثورة الفرنسية في معنى الدولة والمواطن؟"},
+    {key:"twentieth",name:"القرن العشرون",job:"حربان عالميتان، وأيديولوجيات كبرى، وانهيارها. هنا تفهم العالم الذي تعيش فيه.",produce:"جلسة نقاش: لماذا انتهى «قرن التطرفات» إلى ما انتهى إليه؟"}],
+  pol:[
+    {key:"map",name:"الخريطة",job:"المفاهيم الأساسية: السلطة، الشرعية، العدالة، الحرية، وكيف يختلف الناس فيها.",produce:"عرّف كل مفهوم بلغتك في سطرين، واكتب موقفين متعارضين فيه."},
+    {key:"classics",name:"الكلاسيكيات",job:"من أرسطو والفارابي إلى ابن خلدون وميكافيلي: كيف فُكّر في الحكم قبل الدولة الحديثة.",produce:"جدول: صاحب النص، ومصدر الشرعية عنده، وغاية الحكم."},
+    {key:"modern",name:"الحداثة السياسية",job:"العقد الاجتماعي والحرية والفصل بين السلطات: أسس الدولة الحديثة.",produce:"مقالة تقارن تبرير الطاعة عند روسو بتبريرها عند أحد الكلاسيكيين."},
+    {key:"today",name:"أسئلة الدولة اليوم",job:"الاستبداد، وحدود الدولة الحديثة، وسؤال صلاحيتها لمجتمعاتنا.",produce:"صفحة تكتب فيها جوابك عن سؤالك المركزي."}],
+  rel:[
+    {key:"map",name:"الخريطة والمنهج",job:"ما علم مقارنة الأديان، وكيف يُدرس دين غير دينك بإنصاف قبل الحكم عليه.",produce:"عرّف بلغتك، وكما يعرّفها المسيحيون أنفسهم: التثليث، التجسد، الفداء، الكنيسة."},
+    {key:"texts",name:"النص المقدس",job:"اقرأ النص بنفسك قبل أن تقرأ عنه، ثم تعرّف كيف جُمع ونُقل ونُقد.",produce:"جدول يقارن صورة المسيح في إنجيل مرقس بصورته في إنجيل يوحنا."},
+    {key:"hist",name:"التاريخ وتكوّن العقيدة",job:"كيف تشكّلت العقيدة عبر القرون الأولى والمجامع، ولماذا انقسمت الطوائف.",produce:"خط زمني للمجامع الكبرى (نيقية ٣٢٥م، خلقيدونية ٤٥١م وغيرها) وما حسمه كل مجمع."},
+    {key:"compare",name:"النقد والمقارنة",job:"تراث المسلمين في دراسة المسيحية والرد عليها، تقرؤه بعد أن صار عندك ما تقيسه عليه.",produce:"مقالة تقارن مفهومًا واحدًا (الوحي، أو النبوة، أو الخلاص) في الدينين، تعرض فيها كل جانب بأقوى صوره قبل أن تحكم."}],
+  both:[
+    {key:"map",name:"الخريطة",job:"مدخلان قصيران يرسمان حدود الحقلين وأسئلتهما.",produce:"فقرة لكل فصل، وقائمة بالمصطلحات التي تكررت في الكتابين."},
+    {key:"hist",name:"التاريخ والسياق",job:"كيف نشأت الأسئلة في الفلسفة وفي علم الاجتماع، وأين تلتقي.",produce:"خط زمني واحد يجمع الفلاسفة والمؤسسين الاجتماعيين."},
+    {key:"texts",name:"النصوص والجسور",job:"نصوص أصلية من الحقلين، وكتاب يجسر بينهما في سؤال الأخلاق.",produce:"جلسة نقاش: هل الأخلاق من العقل أم من المجتمع؟"},
+    {key:"meaning",name:"سؤال المعنى",job:"تجمع ما قرأته في جواب شخصي.",produce:"صفحة تكتب فيها جوابك عن سؤالك المركزي."}]
+};
+const LIB = [
+  {id:"nagel",f:"phil",st:"map",tier:"core",t:"ماذا يعني هذا كله؟ مقدمة قصيرة جدًا إلى الفلسفة",a:"توماس نيجل",p:120,tags:["knowledge","goodlife","origin"],why:"لا يسرد أسماء ولا تاريخًا، بل يفكر معك في الأسئلة نفسها. يعلّمك كيف يشتغل العقل الفلسفي.",url:"https://www.abjjad.com/book/2772959298/%D9%85%D8%A7%D8%B0%D8%A7-%D9%8A%D8%B9%D9%86%D9%8A-%D9%87%D8%B0%D8%A7-%D9%83%D9%84%D9%87-%D9%85%D9%82%D8%AF%D9%85%D8%A9-%D9%82%D8%B5%D9%8A%D8%B1%D8%A9-%D8%AC%D8%AF%D8%A7-%D8%A7%D9%84%D9%89-%D8%A7%D9%84%D9%81%D9%84%D8%B3%D9%81%D8%A9/2774007874"},
+  {id:"sophie",f:"phil",st:"map",tier:"deep",t:"عالم صوفي",a:"جوستاين غاردر",p:560,tags:["origin","knowledge"],why:"رواية تمرّ على تاريخ الفلسفة كله بلغة قصصية. طويلة لكنها سهلة، وتصلح لمن يحب أن يرى الأفكار في حكاية."},
+  {id:"wisdom",f:"phil",st:"hist",tier:"core",t:"حكمة الغرب (الجزء الأول)",a:"برتراند راسل، ترجمة فؤاد زكريا",p:340,free:true,tags:["origin","society","knowledge"],why:"يضع كل مدرسة في إطارها الاجتماعي والسياسي، فيجيب عن «لماذا نشأت هذه الفكرة هنا والآن؟».",url:"https://www.safahat.org/books/79152038/"},
+  {id:"russell",f:"phil",st:"hist",tier:"deep",t:"تاريخ الفلسفة الغربية – الكتاب الأول",a:"برتراند راسل، ترجمة زكي نجيب محمود",p:450,free:true,tags:["origin","knowledge"],why:"الموسوعة الأوسع للفلسفة القديمة. أثقل على المبتدئ، وتناسب من أنهى «حكمة الغرب».",url:"https://www.safahat.org/books/95042708/"},
+  {id:"plato",f:"phil",st:"texts",tier:"core",t:"محاورات أفلاطون (الدفاع، أقريطون، فيدون)",a:"أفلاطون، ترجمة زكي نجيب محمود",p:200,tags:["origin","goodlife","knowledge"],why:"سقراط وهو يُحاكَم ويحاور: هنا ترى لحظة ميلاد السؤال الفلسفي بعينها."},
+  {id:"aurelius",f:"phil",st:"texts",tier:"core",t:"التأملات",a:"ماركوس أوريليوس، ترجمة عادل مصطفى",p:250,free:true,tags:["goodlife"],why:"خواطر كتبها الإمبراطور لنفسه، فترى الرواقية وهي تُمارَس لا وهي تُعرَّف.",url:"https://www.safahat.org/books/39571313/"},
+  {id:"epictetus",f:"phil",st:"texts",tier:"deep",t:"المختصر",a:"إبكتيتوس",p:150,tags:["goodlife"],why:"أصل فكرة «ما في يدك وما ليس في يدك». قصير وكثيف.",url:"https://www.jarir.com/sa-en/jarir-publication-jrb2079660.html"},
+  {id:"hadot",f:"phil",st:"meaning",tier:"deep",t:"الفلسفة طريقة حياة",a:"بيير آدو",p:380,free:true,tags:["origin","goodlife"],why:"يشرح أن المدارس القديمة كانت مناهج لتحويل النفس، لا قوائم آراء ينتسب إليها الناس.",url:"https://www.safahat.org/books/74839792/"},
+  {id:"frankl",f:"both",st:"meaning",tier:"core",t:"الإنسان يبحث عن المعنى",a:"فيكتور فرانكل، ترجمة طلعت منصور",p:140,tags:["goodlife"],why:"طبيب نفسي نجا من المعتقلات، وبنى علاجه على أن المعنى يُوجد بالعمل والحب والموقف من المعاناة.",url:"https://www.abjjad.com/book/2170848581/%D8%A7%D9%84%D8%A7%D9%86%D8%B3%D8%A7%D9%86-%D9%8A%D8%A8%D8%AD%D8%AB-%D8%B9%D9%86-%D8%A7%D9%84%D9%85%D8%B9%D9%86%D9%89/2202894505"},
+  {id:"bruce",f:"soc",st:"map",tier:"core",t:"علم الاجتماع: مقدمة قصيرة جدًا",a:"ستيف بروس",p:150,tags:["society"],why:"يدافع عن علم الاجتماع بوصفه طريقة نظر، ويبيّن الفرق بينه وبين الانطباع والرأي."},
+  {id:"mills",f:"soc",st:"map",tier:"deep",t:"الخيال السوسيولوجي",a:"سي رايت ميلز",p:250,tags:["society"],why:"كيف تربط همومك الشخصية ببنية المجتمع وتاريخه. كتاب يغيّر طريقة النظر."},
+  {id:"khaldun",f:"soc",st:"hist",tier:"core",t:"مقدمة ابن خلدون (الأبواب الأولى عن العمران والعصبية والدولة)",a:"ابن خلدون",p:300,tags:["state","society","legit"],also:{pol:"classics"},why:"أول نظرية متكاملة في العمران البشري، ومن تراثك. اقرأ فصول العصبية وأطوار الدولة أولًا."},
+  {id:"aron",f:"soc",st:"hist",tier:"deep",t:"مراحل الفكر الاجتماعي",a:"ريمون آرون",p:600,tags:["society","state"],why:"عرض نقدي للمؤسسين: مونتسكيو وكونت وماركس ودوركهايم وفيبر وغيرهم."},
+  {id:"durkheim",f:"soc",st:"texts",tier:"core",t:"قواعد المنهج في علم الاجتماع",a:"إميل دوركهايم",p:180,tags:["society","morals"],why:"كيف يدرس الباحث «الواقعة الاجتماعية» بوصفها شيئًا. أساس المنهج كله."},
+  {id:"weber",f:"soc",st:"texts",tier:"core",t:"الأخلاق البروتستانتية وروح الرأسمالية",a:"ماكس فيبر",p:250,tags:["morals","society","state","secular","modern"],also:{euro:"renaissance"},why:"كيف تصنع العقائد الدينية سلوكًا اقتصاديًا. مثال حيّ على تفسير المجتمع من داخل معاني أفراده."},
+  {id:"giddens",f:"soc",st:"ref",tier:"deep",t:"علم الاجتماع",a:"أنتوني غدنز، ترجمة فايز الصياغ",p:900,tags:["society"],why:"المرجع الشامل. يُقرأ بالفصول حين يقودك سؤال، لا كاملًا."},
+  {id:"khunaifir",f:"both",st:"texts",tier:"core",t:"الأخلاق المدنية",a:"عبدالرحمن الخنيفر",p:642,tags:["morals","origin","secular"],also:{euro:"renaissance",pol:"modern"},why:"قصة نشوء الأخلاق المدنية في الغرب من اليونان إلى الحداثة. الجسر بين الفلسفة والمجتمع والدين."},
+  {id:"ashour",f:"euro",st:"medieval",tier:"core",t:"أوروبا العصور الوسطى (الجزء الأول)",a:"سعيد عبد الفتاح عاشور",p:420,tags:["modern","secular"],why:"المرجع العربي الكلاسيكي في تاريخ أوروبا الوسيطة: الكنيسة والبابوية والإقطاع."},
+  {id:"durant",f:"euro",st:"medieval",tier:"deep",t:"قصة الحضارة (مجلدات عصر الإيمان)",a:"ول ديورانت",p:600,tags:["secular"],why:"سرد واسع ممتع للعصور الوسطى. يُقرأ بالفصول حين تريد التعمق في حقبة بعينها."},
+  {id:"renaiss",f:"euro",st:"renaissance",tier:"core",t:"عصر النهضة: مقدمة قصيرة جدًا",a:"جيري بروتون",p:150,free:true,tags:["modern","secular"],why:"يقدّم النهضة بوصفها حركة عالمية لا أوروبية فقط، ويصحح صورًا شائعة عنها.",url:"https://www.safahat.org/books/19141692/"},
+  {id:"hobsrev",f:"euro",st:"revolutions",tier:"core",t:"عصر الثورة: أوروبا ١٧٨٩–١٨٤٨",a:"إريك هوبزباوم، ترجمة فايز الصياغ",p:480,tags:["revolution","modern","secular"],why:"يقرأ الثورتين الفرنسية والصناعية معًا بوصفهما «الثورة المزدوجة» التي صنعت الحداثة."},
+  {id:"hobscap",f:"euro",st:"revolutions",tier:"deep",t:"عصر رأس المال: ١٨٤٨–١٨٧٥",a:"إريك هوبزباوم، ترجمة فايز الصياغ",p:480,tags:["revolution"],why:"الجزء الثاني من الرباعية: انتصار البرجوازية والسوق."},
+  {id:"hobsext",f:"euro",st:"twentieth",tier:"core",t:"عصر التطرفات: القرن العشرون الوجيز",a:"إريك هوبزباوم، ترجمة فايز الصياغ",p:800,tags:["revolution"],why:"تاريخ القرن العشرين من مؤرخ عاشه. طويل، فاقرأه بأجزائه الثلاثة على مهل."},
+  {id:"khalaf",f:"rel",st:"map",tier:"core",t:"دراسات في الأديان: اليهودية والنصرانية",a:"سعود بن عبد العزيز الخلف",p:350,tags:["doctrine","compare"],why:"مدخل جامعي منظّم: عقائد النصرانية ومصادرها وفرقها، من منظور إسلامي واضح المنهج."},
+  {id:"wafi",f:"rel",st:"map",tier:"core",t:"الأسفار المقدسة في الأديان السابقة للإسلام",a:"علي عبد الواحد وافي",p:200,tags:["text","compare"],why:"يعرّفك بكتب الأديان المقدسة وتاريخ تدوينها، فتعرف أين يقع الكتاب المقدس بينها."},
+  {id:"shahrastani",f:"rel",st:"map",tier:"deep",t:"الملل والنحل (باب أهل الكتاب)",a:"الشهرستاني",p:120,tags:["compare","doctrine"],why:"من أوائل كتب مقارنة الأديان في العالم، ويمتاز بعرض المذاهب كما يقولها أصحابها."},
+  {id:"gospels",f:"rel",st:"texts",tier:"core",first:true,t:"العهد الجديد: إنجيل مرقس ثم إنجيل يوحنا",a:"النص المقدس عند المسيحيين",p:150,tags:["text","doctrine"],why:"أقصر الأناجيل وأقدمها ثم أكثرها لاهوتًا. القراءة المباشرة تمنعك من محاكمة دين لم تقرأ نصه."},
+  {id:"ehrman",f:"rel",st:"texts",tier:"core",t:"تحريف أقوال يسوع",a:"بارت إيرمان",p:280,tags:["text"],why:"باحث أكاديمي غربي في نقد النص يشرح كيف نُسخت المخطوطات وتغيّرت. منظور من داخل الأكاديمية الغربية."},
+  {id:"saqqar",f:"rel",st:"texts",tier:"deep",t:"هل العهد الجديد كلمة الله؟",a:"منقذ بن محمود السقار",p:200,tags:["text","compare"],why:"عرض إسلامي معاصر لأسئلة النص والتدوين، يحسن أن تقارنه بإيرمان."},
+  {id:"abuzahra",f:"rel",st:"hist",tier:"core",t:"محاضرات في النصرانية",a:"محمد أبو زهرة",p:250,tags:["history","doctrine"],why:"من أوضح ما كُتب بالعربية في تاريخ العقيدة والمجامع والكنائس."},
+  {id:"guignebert",f:"rel",st:"hist",tier:"core",t:"المسيحية: نشأتها وتطورها",a:"شارل جنيبير، ترجمة عبد الحليم محمود",p:200,tags:["history","doctrine"],why:"مؤرخ فرنسي يقرأ نشأة المسيحية قراءة تاريخية نقدية من داخل الأكاديمية الأوروبية."},
+  {id:"rustum",f:"rel",st:"hist",tier:"deep",t:"الفرق والمذاهب المسيحية منذ البدايات حتى ظهور الإسلام",a:"سعد رستم",p:300,free:true,tags:["history","doctrine"],why:"خريطة مفصلة للفرق المسيحية المبكرة، ومنها المذاهب التي عاصرت ظهور الإسلام.",url:"https://www.safahat.org/books/81837497/"},
+  {id:"taymiyya",f:"rel",st:"compare",tier:"core",t:"الجواب الصحيح لمن بدّل دين المسيح (مختارات من المجلدين الأولين)",a:"ابن تيمية",p:400,tags:["compare","doctrine"],why:"أوسع مناظرة إسلامية للمسيحية، تقوم على النقاش العقلي ونصوص الطرفين. اقرأه منتقى لا كاملًا."},
+  {id:"hindi",f:"rel",st:"compare",tier:"deep",t:"إظهار الحق",a:"رحمة الله الهندي",p:500,tags:["text","compare"],why:"ثمرة مناظرات القرن التاسع عشر مع المبشّرين في الهند، وتركيزه على النص ونقله."},
+  {id:"miller",f:"pol",st:"map",tier:"core",t:"الفلسفة السياسية: مقدمة قصيرة جدًا",a:"ديفيد ميلر",p:150,tags:["legit","state"],why:"أوضح مدخل لمفاهيم السلطة والعدالة والحرية والقومية، بأسئلة لا بأسماء."},
+  {id:"aristotle",f:"pol",st:"classics",tier:"core",t:"السياسة",a:"أرسطو، ترجمة أحمد لطفي السيد",p:400,tags:["state","legit"],why:"أول تصنيف لأنظمة الحكم وفسادها. أساس كل ما جاء بعده، ومنه الفارابي."},
+  {id:"farabi",f:"pol",st:"classics",tier:"core",t:"آراء أهل المدينة الفاضلة",a:"أبو نصر الفارابي",p:150,tags:["legit"],why:"المدينة الفاضلة في التراث الإسلامي: كيف جمع الفارابي بين الفلسفة اليونانية وسؤال الرئاسة."},
+  {id:"mawardi",f:"pol",st:"classics",tier:"deep",t:"الأحكام السلطانية",a:"الماوردي",p:350,tags:["legit","modernstate"],why:"الفقه السياسي السني الكلاسيكي: الإمامة والولايات وشروطها."},
+  {id:"prince",f:"pol",st:"classics",tier:"core",t:"الأمير",a:"نيكولو ميكافيلي",p:130,tags:["state"],why:"اللحظة التي انفصلت فيها السياسة عن الأخلاق في الفكر الأوروبي. قصير وصادم."},
+  {id:"hobbes",f:"pol",st:"modern",tier:"deep",t:"اللفياثان",a:"توماس هوبز",p:700,tags:["state","legit"],why:"لماذا نطيع الدولة؟ لأن البديل حرب الجميع ضد الجميع. أصل نظرية العقد."},
+  {id:"rousseau",f:"pol",st:"modern",tier:"core",t:"العقد الاجتماعي",a:"جان جاك روسو، ترجمة عادل زعيتر",p:200,tags:["legit"],why:"الإرادة العامة وسيادة الشعب: النص الذي ألهم الثورة الفرنسية."},
+  {id:"montesq",f:"pol",st:"modern",tier:"deep",t:"روح الشرائع",a:"مونتسكيو، ترجمة عادل زعيتر",p:900,tags:["state"],why:"الفصل بين السلطات وعلاقة القوانين بالمناخ والعادات. يُقرأ بالأبواب."},
+  {id:"mill",f:"pol",st:"modern",tier:"core",t:"عن الحرية",a:"جون ستيوارت ميل",p:180,tags:["legit"],why:"أين تنتهي سلطة المجتمع على الفرد؟ أشهر دفاع عن الحرية الفردية."},
+  {id:"tyrant",f:"pol",st:"today",tier:"core",t:"الطاغية",a:"إمام عبد الفتاح إمام",p:350,tags:["legit","state"],why:"دراسة فلسفية لصور الاستبداد السياسي من اليونان إلى العصر الحديث، بقلم عربي."},
+  {id:"hallaq",f:"pol",st:"today",tier:"core",t:"الدولة المستحيلة",a:"وائل حلاق",p:350,tags:["modernstate","legit"],why:"هل يمكن أن تكون الدولة الحديثة إسلامية؟ أطروحة جريئة تستحق المساءلة."}
+];
+const QUESTIONS = {
+  phil:[{t:"لماذا نشأت الفلسفة، وما غايتها؟",tag:"origin"},{t:"ما الحياة الطيبة، وكيف أعيشها؟",tag:"goodlife"},{t:"كيف نعرف ما نعرف؟",tag:"knowledge"}],
+  soc:[{t:"كيف يصنع المجتمع أخلاق أفراده وأفكارهم؟",tag:"morals"},{t:"لماذا تنهض الدول وتسقط؟",tag:"state"},{t:"ما الذي يجعل المجتمع مجتمعًا؟",tag:"society"}],
+  euro:[{t:"كيف خرجت أوروبا من العصور الوسطى إلى الحداثة؟",tag:"modern"},{t:"لماذا انفصل الدين عن الدولة في أوروبا؟",tag:"secular"},{t:"كيف صنعت الثورات العالم المعاصر؟",tag:"revolution"}],
+  pol:[{t:"من أين تستمد السلطة شرعيتها؟",tag:"legit"},{t:"ما الدولة، ولماذا نطيعها؟",tag:"state"},{t:"هل تصلح الدولة الحديثة لمجتمعاتنا؟",tag:"modernstate"}],
+  rel:[{t:"كيف تكوّنت العقيدة المسيحية تاريخيًا؟",tag:"history"},{t:"كيف وصل إلينا نص الكتاب المقدس؟",tag:"text"},{t:"أين تلتقي المسيحية والإسلام، وأين يفترقان؟",tag:"compare"}],
+  both:[{t:"هل الأخلاق من العقل أم من المجتمع؟",tag:"morals"},{t:"لماذا نشأت الفلسفة، وما غايتها؟",tag:"origin"},{t:"ما الحياة الطيبة، وكيف أعيشها؟",tag:"goodlife"}]
+};
+const ASKQ = [
+  {t:"ما السؤال الذي يجيب عنه المؤلف؟",gap:"map",gapText:"لم تحدد سؤال الكتاب بعد: ارجع إلى مقدمته وخاتمته، أو إلى مدخل المرحلة الأولى."},
+  {t:"ما أطروحته في جملة واحدة؟",gap:"map",gapText:"لم تصغ أطروحته: لخّص كل فصل في سطر، ثم اجمع السطور."},
+  {t:"على أي شيء يستدل؟ وما الذي يفترضه دون أن يقوله؟",gap:"hist",gapText:"المسلّمات الخفية تظهر من تاريخ الحقل: كتاب المرحلة الثانية يساعدك."},
+  {t:"من يحاور أو يردّ عليه؟",gap:"hist",gapText:"لا تعرف خصمه بعد: هذا بالضبط ما يقدمه كتاب تاريخ الحقل."},
+  {t:"ما أقوى اعتراض يمكن أن يُوجَّه إليه؟",gap:"texts",gapText:"لم تجد اعتراضًا: اقرأ مدرسة منافسة من مرحلة النصوص الأصلية."}
+];
+const FIELD_NAMES = {phil:"فلسفة",soc:"علم اجتماع",pol:"سياسة",euro:"تاريخ أوروبا",rel:"مقارنة الأديان: المسيحية",both:"فلسفة واجتماع معًا"};
+const DAYS = ["السبت","الأحد","الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة"];
+const DTYPES = {read:"قراءة",review:"مراجعة",open:"مفتوح",rest:"راحة"};
+const DORDER = ["read","review","open","rest"];
+const PRESETS = [
+  {name:"٥ قراءة، مراجعة، مفتوح",w:["read","read","read","read","read","review","open"]},
+  {name:"٥ قراءة، مراجعة، راحة",w:["read","read","read","read","read","review","rest"]},
+  {name:"مكثّف: ٦ قراءة ومراجعة",w:["read","read","read","read","read","read","review"]},
+  {name:"هادئ: يوم ويوم",w:["read","rest","read","rest","read","review","open"]}];
+function memberOf(b,f){
+  if(f==="both") return ["phil","soc","both"].includes(b.f) ? {st:b.st,tier:b.tier} : null;
+  if(b.f===f || (b.f==="both" && (f==="phil"||f==="soc"))) return {st:b.st,tier:b.tier};
+  if(b.also && b.also[f]) return {st:b.also[f],tier:"deep"};
+  return null;
+}
+const STAGE_COLORS = ["var(--s1)","var(--s2)","var(--s3)","var(--s4)","var(--muted)"];
+const RANKS = ["المرتبة الأولى","المرتبة الثانية","المرتبة الثالثة","المرتبة الرابعة","إضافات"];
+
+/* ---------- state ---------- */
+const DEFAULT = {settings:{field:"phil",level:"beg",week:["read","read","read","read","read","review","open"],mins:60,pph:18,q:0,custom:""},ai:null,plan:null,prog:{},qa:{},log:[],sessions:{},askBook:null};
+function hydrate(o){ const x = Object.assign(structuredClone(DEFAULT), o); x.settings = Object.assign(structuredClone(DEFAULT.settings), o.settings||{}); if(!Array.isArray(x.settings.week)||x.settings.week.length!==7) x.settings.week = DEFAULT.settings.week.slice(); if(!QUESTIONS[x.settings.field]) x.settings.field="phil"; x.sessions = x.sessions||{}; return x; }
+let S = structuredClone(DEFAULT);
+const LSKEY = "minhaj-v1";
+try{ const raw = localStorage.getItem(LSKEY); if(raw) S = hydrate(JSON.parse(raw)); }catch(e){}
+let tab = "build", dbRef = null, dirty = false, saving = false, pendingSave = false, saveTimer = null, sampleFn = null;
+
+const nf = new Intl.NumberFormat("ar-SA",{numberingSystem:"arab"});
+const n = x => nf.format(x);
+const esc = s => String(s ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $ = s => document.querySelector(s);
+const view = $("#view");
+
+function scheduleSave(){
+  dirty = true;
+  try{ localStorage.setItem(LSKEY, JSON.stringify(S)); }catch(e){}
+  clearTimeout(saveTimer); saveTimer = setTimeout(saveRemote, 900);
+}
+async function saveRemote(){
+  if(!dbRef) return;
+  if(saving){ pendingSave = true; return; }
+  saving = true;
+  try{ await dbRef.set({state:JSON.parse(JSON.stringify(S)), v:1}); setPill(true); }
+  catch(e){ setPill(false,"تعذّر الحفظ في حسابك، والنسخة محفوظة في هذا المتصفح"); }
+  saving = false;
+  if(pendingSave){ pendingSave = false; saveRemote(); }
+}
+function setPill(ok,text){
+  const p = $("#savePill"); p.classList.toggle("ok",ok);
+  p.querySelector("span").textContent = text || (ok ? "محفوظ في حسابك" : "محفوظ في هذا المتصفح");
+}
+
+/* ---------- plan logic ---------- */
+function readDays(){ return S.settings.week.filter(d=>d==="read").length; }
+function weeklyHours(){ return Math.max(.25, readDays()*S.settings.mins/60); }
+function sessionPages(){ return Math.max(1, Math.round(S.settings.mins/60*S.settings.pph)); }
+function weeksFor(p){ return Math.max(1, Math.ceil(p / (weeklyHours() * S.settings.pph))); }
+function currentQuestion(){
+  const s = S.settings;
+  if(s.q === "custom") return {t:s.custom.trim() || "سؤالك الخاص", tag:null, custom:true};
+  return QUESTIONS[s.field][s.q] || QUESTIONS[s.field][0];
+}
+function buildPlan(){
+  const s = S.settings, q = currentQuestion();
+  const aiFocus = (q.custom && S.ai && S.ai.field === s.field) ? S.ai.picks.map(p=>p.id) : [];
+  const stages = STAGES[s.field].map((st,i)=>({...st, idx:i, items:[]}));
+  const stageOf = key => {
+    if(s.field==="both" && key==="ref") key = "texts";
+    if(s.field==="soc" && key==="meaning") key = "ref";
+    return stages.find(x=>x.key===key);
+  };
+  LIB.forEach(b=>{
+    const m = memberOf(b,s.field); if(!m) return;
+    b = {...b, st:m.st, tier:m.tier};
+    if(s.field==="both" && b.tier==="deep") { if(!(q.tag && b.tags.includes(q.tag)) && !aiFocus.includes(b.id)) return; }
+    const star = (q.tag && b.tags.includes(q.tag)) || aiFocus.includes(b.id);
+    if(s.level==="beg" && b.tier==="deep" && !star) return;
+    if(s.level==="mid" && b.st==="map" && b.tier==="core") return;
+    const st = stageOf(b.st); if(!st) return;
+    const reason = aiFocus.includes(b.id) ? (S.ai.picks.find(p=>p.id===b.id)||{}).why : null;
+    st.items.push({...b, star, reason, w:weeksFor(b.p)});
+  });
+  if(q.custom && S.ai && S.ai.field===s.field && S.ai.extras.length){
+    stages.push({key:"extra",name:"إضافات مقترحة لسؤالك",idx:4,job:"كتب اقترحها Claude لسؤالك. تحقق من توفر ترجمتها العربية قبل أن تعتمدها.",produce:"قرّر أي واحد منها يستحق مكانًا في خطتك.",
+      items:S.ai.extras.map((e,i)=>({id:"ai-"+i,t:e.title,a:e.author,p:Number(e.pages)||200,why:e.why,ai:true,tier:"core",w:weeksFor(Number(e.pages)||200)}))});
+  }
+  stages.forEach(st=>st.items.sort((a,b)=>(b.first?1:0)-(a.first?1:0)||(b.star?1:0)-(a.star?1:0)||(a.tier==="core"?-1:1)));
+  return stages.filter(st=>st.items.length);
+}
+
+/* ---------- render: build ---------- */
+function weekSummary(){ const r = readDays(); return r ? `${n(r)} أيام قراءة × ${n(S.settings.mins)} دقيقة = ${n(Math.round(weeklyHours()*10)/10)} ساعة أسبوعيًا، ونحو ${n(sessionPages())} صفحة في الجلسة.` : "لم تختر أي يوم للقراءة: اجعل يومًا واحدًا على الأقل «قراءة»."; }
+function renderBuild(){
+  const s = S.settings, qs = QUESTIONS[s.field];
+  view.innerHTML = `
+  <div class="grid">
+    <aside class="panel" aria-label="إعدادات الخطة">
+      <div class="field"><span class="label">الحقل</span>
+        <div class="seg" data-set="field">${Object.entries(FIELD_NAMES).map(([k,v])=>`<button type="button" data-v="${k}" aria-pressed="${s.field===k}">${v}</button>`).join("")}</div></div>
+      <div class="field"><span class="label">مستواك</span>
+        <div class="seg" data-set="level"><button type="button" data-v="beg" aria-pressed="${s.level==="beg"}">أبدأ من الصفر</button><button type="button" data-v="mid" aria-pressed="${s.level==="mid"}">قرأت مداخل من قبل</button></div></div>
+      <div class="field"><span class="label">أسبوعك: اضغط على اليوم لتغيّر نوعه</span>
+        <div class="days">${s.week.map((t,i)=>`<button type="button" class="day" data-day="${i}" aria-label="${DAYS[i]}: ${DTYPES[t]}"><b>${DAYS[i].replace("ال","")}</b><i class="ty-${t}">${DTYPES[t]}</i></button>`).join("")}</div>
+        <div class="presets">${PRESETS.map((p,i)=>`<button type="button" class="btn small" data-preset="${i}">${p.name}</button>`).join("")}</div></div>
+      <div class="field"><label class="label" for="mins">مدة جلسة القراءة: <span class="rangeval">${n(s.mins)} دقيقة</span></label>
+        <input id="mins" type="range" min="15" max="150" step="15" value="${s.mins}">
+        <p class="hint" id="weekSum">${weekSummary()}</p></div>
+      <div class="field"><label class="label" for="pph">سرعتك: <span class="rangeval">${n(s.pph)} صفحة في الساعة</span></label>
+        <input id="pph" type="range" min="8" max="40" value="${s.pph}">
+        <p class="hint">النص الفلسفي يُقرأ ببطء: ١٥ إلى ٢٠ صفحة في الساعة تقدير واقعي مع التدوين.</p></div>
+      <div class="field" role="radiogroup" aria-label="السؤال المركزي"><span class="label">السؤال المركزي الذي تقرأ من أجله</span>
+        ${qs.map((x,i)=>`<label class="qopt"><input type="radio" name="q" value="${i}" ${s.q===i?"checked":""}><span>${esc(x.t)}</span></label>`).join("")}
+        <label class="qopt"><input type="radio" name="q" value="custom" ${s.q==="custom"?"checked":""}><span>سؤال من عندي</span></label>
+        ${s.q==="custom"?`<textarea id="custom" placeholder="مثال: لماذا يُنسب فعل إنساني إلى مدرسة فلسفية بعينها؟">${esc(s.custom)}</textarea>
+          <div class="ai" id="aiBox" ${sampleFn?"":"hidden"}>
+            <p class="hint">يقرأ Claude سؤالك ويختار له من مكتبة المنهاج، ويقترح كتبًا إضافية.</p>
+            <div class="actions"><button class="btn primary small" id="aiSuggest" type="button">اقترح مسارًا لسؤالي</button><span class="hint" id="aiStatus"></span></div>
+          </div>`:""}
+      </div>
+    </aside>
+    <section class="panel" aria-label="الخطة المقترحة" id="planSec">${planHTML()}</section>
+  </div>`;
+}
+function planHTML(){
+  const s = S.settings, q = currentQuestion(), stages = buildPlan();
+  const items = stages.flatMap(st=>st.items);
+  const totalW = items.reduce((a,b)=>a+b.w,0), totalP = items.reduce((a,b)=>a+b.p,0);
+  const end = new Date(); end.setDate(end.getDate()+totalW*7);
+  const endTxt = end.toLocaleDateString("ar-SA-u-ca-gregory-nu-arab",{month:"long",year:"numeric"});
+  let ticks = ""; const step = totalW>40?8:4;
+  for(let w=step; w<totalW; w+=step) ticks += `<span style="right:${(w/totalW*100).toFixed(2)}%">أسبوع ${n(w)}</span>`;
+  return `      <p class="lens"><small>تقرأ هذه الخطة كلها لتجيب عن</small>«${esc(q.t)}»</p>
+      ${q.custom && S.ai && S.ai.lens && S.ai.field===s.field ? `<p class="job">${esc(S.ai.lens)}</p>`:""}
+      <div class="stats">
+        <div class="stat"><b>${n(items.length)}</b><span>كتابًا</span></div>
+        <div class="stat"><b>${n(totalP)}</b><span>صفحة تقريبًا</span></div>
+        <div class="stat"><b>${n(totalW)}</b><span>أسبوعًا (${n(Math.round(totalW/4.3*10)/10)} شهرًا)</span></div>
+        <div class="stat"><b style="font-size:1.15rem">${endTxt}</b><span>تنتهي تقريبًا إن بدأت اليوم</span></div>
+      </div>
+      <div class="timeline" aria-label="الخط الزمني للخطة">
+        <div class="track">${stages.flatMap(st=>st.items.map(b=>`<div style="flex:${b.w};background:${STAGE_COLORS[st.idx]}" title="${esc(b.t)}: ${n(b.w)} أسبوع">${b.w/totalW>.09?n(b.w)+" أ":""}</div>`)).join("")}</div>
+        <div class="ticks">${ticks}</div>
+        <div class="legend">${stages.map(st=>`<span><i style="background:${STAGE_COLORS[st.idx]}"></i>${esc(st.name)}</span>`).join("")}</div>
+      </div>
+      <div class="stage"><div class="stagehead"><span class="rank">المنهجية</span><h3>كيف تقضي أيامك</h3></div>
+        <div class="method">${methodHTML()}</div></div>
+      ${stages.map(st=>`
+        <div class="stage">
+          <div class="stagehead"><span class="rank">${RANKS[st.idx]}</span><h3>${esc(st.name)}</h3></div>
+          <p class="job">${esc(st.job)}</p>
+          <div>${st.items.map(b=>bookRow(b,st)).join("")}</div>
+          <p class="produce"><b>قبل أن تنتقل:</b> ${esc(st.produce)}</p>
+        </div>`).join("")}
+      <p class="hint">عدد الصفحات تقريبي للطبعات العربية الشائعة. «مجاني» يعني أنه متاح قانونيًا عبر مؤسسة هنداوي.</p>
+      <div class="actions" id="adoptBar">${adoptBar()}</div>
+`;
+}
+function methodHTML(){
+  const w = S.settings.week, m = S.settings.mins, used = DORDER.filter(t=>w.includes(t));
+  const warm = Math.max(5, Math.round(m*.1/5)*5), note = Math.max(5, Math.round(m*.15/5)*5), read = Math.max(5, m-warm-note);
+  const days = t => w.map((d,i)=>d===t?DAYS[i]:null).filter(Boolean).join("، ");
+  const M = {
+    read:`<ol><li>استرجع ما قرأته أمس دون النظر <span>${n(warm)} د</span></li><li>اقرأ بقلم في يدك، وعلّم ما لم تفهمه <span>${n(read)} د</span></li><li>اكتب فقرة: ما الذي قاله المؤلف اليوم؟ <span>${n(note)} د</span></li></ol>`,
+    review:`<ol><li>أعد قراءة فقرات الأسبوع، لا الكتاب</li><li>أجب عن أسئلة المساءلة في «حاسب النص»</li><li>انقل ما بقي غامضًا إلى «دفتر الأسئلة»</li><li>أضف شيئًا إلى «ما أنتجته» من الكتاب</li></ol>`,
+    open:`<ol><li>اتبع فضولك: مقالة، محاضرة، أو كتاب خارج الخطة</li><li>أو جلسة نقاش مع غيرك حول ما قرأت</li><li>لا واجب فيه، فهو ما يُبقي القراءة ممتعة</li></ol>`,
+    rest:`<ol><li>لا قراءة. الراحة جزء من المنهج</li><li>الأفكار تستقر في الذهن حين تبتعد عنها قليلًا</li></ol>`};
+  const C = {read:"var(--accent)",review:"var(--gold)",open:"var(--s4)",rest:"var(--line)"};
+  const rules = S.settings.field==="rel" ? `<div class="mcard" style="grid-column:1/-1"><h4><i style="background:var(--s3)"></i>قواعد المقارنة</h4><ol>
+    <li>صف قبل أن تحكم: اعرض العقيدة بالألفاظ التي يقبلها أهلها، فإن لم تستطع فأنت لم تفهمها بعد.</li>
+    <li>فرّق بين ثلاثة مستويات: النص، والتاريخ، والممارسة اليومية للناس. ولا تقارن نصًا عندك بممارسة عندهم.</li>
+    <li>المسيحية ليست شيئًا واحدًا: الأرثوذكسية والكاثوليكية والبروتستانتية تختلف في مسائل كثيرة.</li>
+    <li>قارن المتماثل: مفهومًا بمفهوم (الوحي بالوحي، والنبوة بالنبوة)، لا كتابًا بكتاب فقط.</li>
+    <li>اقرأ كل مسألة من ثلاثة أصوات: كيف يفهمها المسيحي، وكيف يدرسها المؤرخ، وكيف ناقشها علماء المسلمين.</li></ol></div>` : "";
+  return rules + used.map(t=>`<div class="mcard"><h4><i style="background:${C[t]}"></i>يوم ${DTYPES[t]}</h4><span class="hint">${days(t)}</span>${M[t]}</div>`).join("");
+}
+function bookRow(b,st){
+  return `<div class="book"><span class="bar" style="background:${STAGE_COLORS[st.idx]}"></span>
+    <div style="min-width:0">
+      <div class="t">${b.url?`<a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.t)}</a>`:esc(b.t)}</div>
+      <div class="a">${esc(b.a)}</div>
+      <p class="why">${esc(b.reason || b.why)}</p>
+      <div class="tags">${b.star?`<span class="tag star">قلب سؤالك</span>`:""}${b.ai?`<span class="tag ai">مقترح: تحقق من الطبعة</span>`:`<span class="tag ${b.tier==="core"?"core":""}">${b.tier==="core"?"أساسي":"للتعمّق"}</span>`}${b.free?`<span class="tag free">مجاني</span>`:""}</div>
+    </div>
+    <div class="meta"><b>${n(b.w)} ${b.w===1?"أسبوع":"أسابيع"}</b>${n(b.p)} ص</div></div>`;
+}
+function adoptBar(confirming){
+  if(!S.plan) return `<button class="btn primary" id="adopt" type="button">اعتمد هذه الخطة وابدأ المتابعة</button>`;
+  if(confirming) return `<span class="hint">ستُستبدل خطتك الحالية، ويبقى تقدّمك محفوظًا في الكتب المشتركة.</span><button class="btn primary" id="adoptYes" type="button">نعم، استبدلها</button><button class="btn" id="adoptNo" type="button">تراجع</button>`;
+  return `<button class="btn" id="adopt" type="button">استبدل خطتك الحالية بهذه</button><span class="hint">لديك خطة معتمدة منذ ${esc(S.plan.date)}.</span>`;
+}
+function adopt(){
+  const stages = buildPlan();
+  S.plan = {date:new Date().toLocaleDateString("ar-SA-u-ca-gregory-nu-arab",{day:"numeric",month:"long",year:"numeric"}), q:currentQuestion().t, field:S.settings.field,
+    stages:stages.map(st=>({key:st.key,name:st.name,idx:st.idx,produce:st.produce,items:st.items.map(b=>({id:b.id,t:b.t,a:b.a,p:b.p,w:b.w,ai:!!b.ai,star:!!b.star}))}))};
+  scheduleSave(); setTab("track");
+}
+
+/* ---------- render: week ---------- */
+function dkey(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function queue(){ return S.plan.stages.flatMap(st=>st.items).filter(b=>prog(b.id).st!=="done").map(b=>({id:b.id,t:b.t,p:b.p,at:Math.min(b.p,Number(prog(b.id).read)||0)})); }
+function renderWeek(){
+  if(!S.plan){ view.innerHTML = `<div class="panel empty"><h3>جدولك ينتظر خطة</h3><p>اعتمد خطة من «صمّم الخطة»، وسيظهر هنا ما تقرؤه كل يوم، بالكتاب ورقم الصفحات.</p><button class="btn primary" type="button" data-go="build">إلى تصميم الخطة</button></div>`; return; }
+  const q = queue(), per = sessionPages(), today = new Date(), rows = [];
+  const weekBooks = new Set(); let qi = 0;
+  const done = Object.keys(S.sessions).length;
+  for(let k=0;k<7;k++){
+    const d = new Date(today); d.setDate(today.getDate()+k);
+    const idx = (d.getDay()+1)%7, type = S.settings.week[idx], key = dkey(d), logged = S.sessions[key];
+    let body = "", action = "";
+    if(type==="read"){
+      if(k===0 && logged){ body = `أنجزت جلسة اليوم: ${n(logged.pages)} صفحة من «${esc(logged.t)}».`; action = `<button class="btn small" type="button" data-session="undo">تراجع</button>`; }
+      else {
+        let left = per; const parts = [];
+        while(left>0 && qi<q.length){ const b = q[qi], take = Math.min(left, b.p-b.at); if(take<=0){ qi++; continue; }
+          parts.push(`«${esc(b.t)}» ص ${n(b.at+1)}–${n(b.at+take)}`); weekBooks.add(b.t); b.at += take; left -= take; if(b.at>=b.p) qi++; }
+        body = parts.length ? parts.join("، ثم ") : "أتممت كتب الخطة كلها.";
+        if(k===0 && parts.length) action = `<button class="btn primary small" type="button" data-session="do">أنجزت جلسة اليوم</button>`;
+      }
+    } else if(type==="review"){
+      body = weekBooks.size ? `راجع ما قرأته من ${[...weekBooks].map(t=>"«"+esc(t)+"»").join(" و")}، وأجب عن أسئلة المساءلة.` : "راجع ملاحظات الأسبوع، وأجب عن أسئلة المساءلة لكتابك الحالي.";
+      action = `<button class="btn small" type="button" data-go="ask">حاسب النص</button>`;
+    } else if(type==="open") body = "يوم مفتوح: اتبع فضولك، أو ناقش ما قرأته مع أحد.";
+    else body = "راحة. الأفكار تستقر حين تبتعد عنها قليلًا.";
+    rows.push(`<div class="wday ${k===0?"today":""}"><div><div class="dn">${k===0?"اليوم":DAYS[idx]}</div><div class="dd">${d.toLocaleDateString("ar-SA-u-ca-gregory-nu-arab",{day:"numeric",month:"long"})}</div></div>
+      <div style="min-width:0"><span class="chip ty-${type}">${DTYPES[type]}</span><p class="wt">${body}</p></div><div>${action}</div></div>`);
+  }
+  view.innerHTML = `<section class="panel">
+    <p class="lens"><small>الأيام السبعة القادمة، محسوبة من الصفحة التي وصلت إليها</small>${n(per)} صفحة في كل جلسة قراءة، ${n(readDays())} جلسات في الأسبوع</p>
+    <div class="week">${rows.join("")}</div>
+    <p class="hint">حين تضغط «أنجزت جلسة اليوم» تُضاف صفحات الجلسة إلى تقدّمك في الكتاب، ويُعاد حساب بقية الأسبوع. جلسات سجّلتها حتى الآن: ${n(done)}. لتغيير الأيام أو مدة الجلسة ارجع إلى «صمّم الخطة».</p>
+  </section>`;
+}
+function logSession(undo){
+  const key = dkey(new Date());
+  if(undo){ const s = S.sessions[key]; if(s){ const g = prog(s.id); g.read = Math.max(0,(Number(g.read)||0)-s.pages); if(g.st==="done") g.st="reading"; delete S.sessions[key]; } }
+  else { const b = queue()[0]; if(!b) return; const take = Math.min(sessionPages(), b.p-b.at); const g = prog(b.id); g.read = b.at+take; g.st = g.read>=b.p ? "done" : "reading"; S.sessions[key] = {id:b.id,t:b.t,pages:take}; }
+  scheduleSave(); renderWeek();
+}
+
+/* ---------- render: track ---------- */
+function prog(id){ return S.prog[id] || (S.prog[id]={st:"todo",read:0,out:""}); }
+function renderTrack(){
+  if(!S.plan){ view.innerHTML = `<div class="panel empty"><h3>لا توجد خطة معتمدة بعد</h3><p>صمّم خطتك أولًا، ثم اعتمدها لتتابع هنا صفحاتك وما أنتجته من كل كتاب.</p><button class="btn primary" type="button" data-go="build">إلى تصميم الخطة</button></div>`; return; }
+  const items = S.plan.stages.flatMap(st=>st.items.map(b=>({...b,sidx:st.idx})));
+  const totalP = items.reduce((a,b)=>a+b.p,0);
+  const readP = items.reduce((a,b)=>a+Math.min(b.p, prog(b.id).st==="done"?b.p:Number(prog(b.id).read)||0),0);
+  const done = items.filter(b=>prog(b.id).st==="done").length;
+  const cur = S.plan.stages.find(st=>st.items.some(b=>!(prog(b.id).st==="done" && prog(b.id).out.trim()))) ;
+  view.innerHTML = `
+  <section class="panel">
+    <p class="lens"><small>سؤالك المركزي</small>«${esc(S.plan.q)}»</p>
+    <div class="stats">
+      <div class="stat"><b>${n(Math.round(readP/totalP*100))}٪</b><span>من الصفحات</span></div>
+      <div class="stat"><b>${n(done)} من ${n(items.length)}</b><span>كتب أنهيتها</span></div>
+      <div class="stat"><b style="font-size:1.15rem">${cur?esc(cur.name):"أتممت الخطة"}</b><span>المرحلة الحالية</span></div>
+    </div>
+    <div class="progress" aria-hidden="true">${S.plan.stages.map(st=>{const p=st.items.reduce((a,b)=>a+Math.min(b.p, prog(b.id).st==="done"?b.p:Number(prog(b.id).read)||0),0);return `<div style="width:${(p/totalP*100).toFixed(2)}%;background:${STAGE_COLORS[st.idx]}"></div>`}).join("")}</div>
+  </section>
+  ${S.plan.stages.map(st=>{
+    const complete = st.items.every(b=>prog(b.id).st==="done" && prog(b.id).out.trim());
+    return `<section class="stage" style="margin-top:18px">
+      <div class="stagehead"><span class="rank">${RANKS[st.idx]}</span><h3>${esc(st.name)}</h3>${complete?`<span class="okchip">اكتملت بما أنتجته</span>`:""}</div>
+      <p class="produce"><b>ما تنتجه قبل الانتقال:</b> ${esc(st.produce)}</p>
+      <div class="cardgrid">${st.items.map(b=>trackCard(b,st)).join("")}</div>
+    </section>`}).join("")}`;
+}
+function trackCard(b,st){
+  const g = prog(b.id);
+  const states = [["todo","لم أبدأ"],["reading","أقرأ الآن"],["done","أنهيته"]];
+  return `<article class="card" data-book="${esc(b.id)}" style="border-inline-start:4px solid ${STAGE_COLORS[st.idx]}">
+    <div><div class="t" style="font-family:var(--f-body);font-weight:600;font-size:1.05rem">${esc(b.t)}</div><div class="hint">${esc(b.a)} · ${n(b.p)} صفحة</div></div>
+    <div class="seg" data-status>${states.map(([k,v])=>`<button type="button" data-v="${k}" aria-pressed="${g.st===k}">${v}</button>`).join("")}</div>
+    <div class="row"><label class="hint" for="r-${esc(b.id)}">وصلت إلى صفحة</label><input id="r-${esc(b.id)}" type="number" min="0" max="${b.p}" value="${g.read||""}" data-read style="width:100px"><span class="hint">من ${n(b.p)}</span></div>
+    <label class="hint" for="o-${esc(b.id)}">ما أنتجته من هذا الكتاب</label>
+    <textarea id="o-${esc(b.id)}" data-out placeholder="تلخيص، مقالة، أسئلة جلسة نقاش، خط زمني...">${esc(g.out)}</textarea>
+    <div class="row" style="justify-content:space-between"><span data-note>${noteFor(g)}</span><button class="btn small" type="button" data-ask="${esc(b.id)}">حاسب هذا الكتاب</button></div>
+  </article>`;
+}
+function noteFor(g){
+  if(g.st==="done" && !g.out.trim()) return `<span class="warnchip">أنهيته دون أن تنتج منه شيئًا. الإنتاج هو ما يثبّت القراءة.</span>`;
+  if(g.st==="done") return `<span class="okchip">مكتمل</span>`;
+  return "";
+}
+
+/* ---------- render: ask ---------- */
+function allBooks(){
+  if(S.plan) return S.plan.stages.flatMap(st=>st.items);
+  return LIB.map(b=>({id:b.id,t:b.t,a:b.a,p:b.p}));
+}
+function qa(id){ return S.qa[id] || (S.qa[id]={a:["","","","",""],unk:[false,false,false,false,false],sum:false,obj:false}); }
+function score(r){ let s=0; r.a.forEach((x,i)=>{ if(x.trim() && !r.unk[i]) s+=14; }); if(r.sum) s+=15; if(r.obj) s+=15; return s; }
+function level(s){ return s>=80?"فهم متين: تستطيع أن تناقش هذا الكتاب وتحاسبه":s>=45?"فهم يتشكّل: بقيت ثغرات تحتاج رجوعًا":"فهم سطحي حتى الآن: لا بأس، الثغرات تحدد خطوتك القادمة"; }
+function renderAsk(){
+  const books = allBooks();
+  if(!S.askBook || !books.some(b=>b.id===S.askBook)) S.askBook = books[0].id;
+  const b = books.find(x=>x.id===S.askBook), r = qa(b.id), sc = score(r);
+  const gaps = [];
+  Object.entries(S.qa).forEach(([id,rec])=>rec.unk.forEach((u,i)=>{ if(u){ const bk = books.find(x=>x.id===id) || LIB.find(x=>x.id===id); if(bk) gaps.push({bk,i}); }}));
+  view.innerHTML = `
+  <div class="grid">
+    <aside class="panel">
+      <div class="field"><label class="label" for="askSel">الكتاب الذي تحاسبه</label>
+        <select id="askSel">${books.map(x=>`<option value="${esc(x.id)}" ${x.id===b.id?"selected":""}>${esc(x.t)}</option>`).join("")}</select></div>
+      <div class="meter"><span class="label">مقياس الفهم</span><div class="progress"><div id="meterBar" style="width:${sc}%"></div></div><p class="hint" id="meterTxt">${level(sc)}</p></div>
+      <div class="field"><span class="label">ثغراتك عبر الكتب</span>
+        ${gaps.length?gaps.map(g=>`<div class="gap"><b style="font-family:var(--f-body)">${esc(g.bk.t)}</b><span>${esc(ASKQ[g.i].t)}</span><span class="hint">${esc(ASKQ[g.i].gapText)}${suggestFor(ASKQ[g.i].gap)}</span></div>`).join(""):`<p class="hint">حين تؤشّر «لا أعرف بعد» على سؤال، يظهر هنا مع اقتراح لما تقرؤه لسدّه. الثغرة ليست فشلًا، بل هي ما يحدد كتابك القادم.</p>`}
+      </div>
+    </aside>
+    <section class="panel" data-qa="${esc(b.id)}">
+      <div><h2 style="font-size:1.4rem">${esc(b.t)}</h2><p class="hint">${esc(b.a)}</p></div>
+      <p class="job">لا يُشترط أن تعرف الجواب. اكتب ما تستطيع، وأشّر على ما لم تعرفه بعد.</p>
+      ${ASKQ.map((q,i)=>`<div class="q"><label class="qt" for="qa${i}">${n(i+1)}. ${esc(q.t)}</label>
+        <textarea id="qa${i}" data-i="${i}">${esc(r.a[i])}</textarea>
+        <label class="check"><input type="checkbox" data-unk="${i}" ${r.unk[i]?"checked":""}> لا أعرف بعد</label></div>`).join("")}
+      <div class="field"><span class="label">علامات الفهم</span>
+        <label class="check"><input type="checkbox" id="chkSum" ${r.sum?"checked":""}> لخّصت أطروحته بلغتي دون الرجوع إلى الكتاب</label>
+        <label class="check"><input type="checkbox" id="chkObj" ${r.obj?"checked":""}> أستطيع صياغة أقوى اعتراض عليه والدفاع عنه</label></div>
+      <div class="ai" id="aiAsk" ${sampleFn?"":"hidden"}>
+        <span class="label">اختبر فهمك مع Claude</span>
+        <p class="hint">يقرأ إجاباتك، ثم يطرح عليك أسئلة تكشف أين فهمك سطحي، دون أن يجيب عنك.</p>
+        <div class="actions"><button class="btn primary small" id="aiTest" type="button">اختبر فهمي</button><button class="btn small" id="aiStop" type="button" hidden>أوقف</button></div>
+        <div class="aiout" id="aiOut"></div>
+      </div>
+    </section>
+  </div>`;
+}
+function suggestFor(stageKey){
+  if(!S.plan) return "";
+  const st = S.plan.stages.find(x=>x.key===stageKey); if(!st || !st.items[0]) return "";
+  return ` مقترح: «${esc(st.items[0].t)}».`;
+}
+function updateMeter(){
+  const r = qa(S.askBook), sc = score(r);
+  const bar = $("#meterBar"); if(bar){ bar.style.width = sc+"%"; $("#meterTxt").textContent = level(sc); }
+}
+
+/* ---------- render: log ---------- */
+function renderLog(){
+  const stOpts = (S.plan ? S.plan.stages : STAGES[S.settings.field]).map(st=>`<option value="${esc(st.name)}">${esc(st.name)}</option>`).join("");
+  view.innerHTML = `
+  <div class="grid">
+    <aside class="panel">
+      <p class="job">حين يخطر لك سؤال وتبحث عنه سريعًا، دوّن الجواب هنا بكلماتك في سطرين. الكتابة هي ما يمنع عودة السؤال نفسه بعد أشهر.</p>
+      <div class="field"><label class="label" for="lq">السؤال</label><input id="lq" type="text" placeholder="مثال: لماذا يُنسب فعل إلى مدرسة فلسفية؟"></div>
+      <div class="field"><label class="label" for="la">جوابي بكلماتي (سطران)</label><textarea id="la" placeholder="المدارس لا تصنّف الأفعال بل تبريرها..."></textarea></div>
+      <div class="field"><label class="label" for="ls">بأي مرحلة يتصل؟</label><select id="ls"><option value="">غير محدد</option>${stOpts}</select></div>
+      <button class="btn primary" id="addLog" type="button">دوّن السؤال</button>
+      <p class="hint" id="logMsg" role="status"></p>
+    </aside>
+    <section class="panel">
+      <div class="row" style="justify-content:space-between"><h2 style="font-size:1.3rem">دفترك (${n(S.log.length)})</h2><input id="lsearch" type="search" placeholder="ابحث في أسئلتك" style="max-width:240px" aria-label="ابحث في أسئلتك"></div>
+      <div id="logList" class="log" style="display:flex;flex-direction:column;gap:10px">${logItems("")}</div>
+    </section>
+  </div>`;
+}
+function logItems(term){
+  const list = S.log.filter(x=>!term || (x.q+x.a).includes(term));
+  if(!S.log.length) return `<div class="empty"><h3>الدفتر فارغ</h3><p>أول سؤال تدوّنه يظهر هنا. وكلما عاد إليك سؤال قديم، اضغط «عاد إليّ» لترى أي الأسئلة تشغلك حقًا.</p></div>`;
+  if(!list.length) return `<p class="hint">لا نتائج.</p>`;
+  return list.slice().sort((a,b)=>b.n-a.n||b.ts-a.ts).map(x=>`<article class="card" data-log="${esc(x.id)}">
+    <div class="lq">${esc(x.q)}</div><p class="la">${esc(x.a)||'<span class="hint">لم تكتب جوابًا بعد</span>'}</p>
+    <div class="row" style="justify-content:space-between"><span class="hint">${esc(x.d)}${x.s?" · "+esc(x.s):""}</span>
+      <span class="row"><button class="btn small" type="button" data-again>عاد إليّ <span class="count">(${n(x.n)})</span></button><button class="btn small" type="button" data-del>${x.confirm?"تأكيد الحذف":"احذف"}</button></span></div>
+    ${x.n>=3?`<p class="warnchip">عاد إليك هذا السؤال ${n(x.n)} مرات: ربما يستحق أن يصير سؤالك المركزي.</p>`:""}
+  </article>`).join("");
+}
+
+/* ---------- routing ---------- */
+function setTab(t){
+  tab = t;
+  document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected", b.dataset.tab===t));
+  ({build:renderBuild,week:renderWeek,track:renderTrack,ask:renderAsk,log:renderLog})[t]();
+}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
+
+/* ---------- events ---------- */
+view.addEventListener("click", e=>{
+  const go = e.target.closest("[data-go]"); if(go) return setTab(go.dataset.go);
+  const dayBtn = e.target.closest("[data-day]");
+  if(dayBtn){ const i = Number(dayBtn.dataset.day), w = S.settings.week; w[i] = DORDER[(DORDER.indexOf(w[i])+1)%4]; scheduleSave(); return renderBuild(); }
+  const pre = e.target.closest("[data-preset]");
+  if(pre){ S.settings.week = PRESETS[Number(pre.dataset.preset)].w.slice(); scheduleSave(); return renderBuild(); }
+  const sess = e.target.closest("[data-session]"); if(sess) return logSession(sess.dataset.session === "undo");
+  const segBtn = e.target.closest(".seg[data-set] button");
+  if(segBtn){ const k = segBtn.parentElement.dataset.set; S.settings[k] = segBtn.dataset.v; if(k==="field"){ S.settings.q = 0; } scheduleSave(); return renderBuild(); }
+  if(e.target.id==="adopt"){ if(S.plan){ $("#adoptBar").innerHTML = adoptBar(true); return; } return adopt(); }
+  if(e.target.id==="adoptYes") return adopt();
+  if(e.target.id==="adoptNo"){ $("#adoptBar").innerHTML = adoptBar(); return; }
+  if(e.target.id==="aiSuggest") return aiSuggest();
+  if(e.target.id==="aiTest") return aiTest();
+  if(e.target.id==="aiStop"){ aiCtl?.abort(); return; }
+  const st = e.target.closest("[data-status] button");
+  if(st){ const id = st.closest("[data-book]").dataset.book; const g = prog(id); g.st = st.dataset.v;
+    const b = S.plan.stages.flatMap(x=>x.items).find(x=>x.id===id); if(g.st==="done" && b) g.read = b.p;
+    scheduleSave(); return renderTrack(); }
+  const ask = e.target.closest("[data-ask]"); if(ask){ S.askBook = ask.dataset.ask; return setTab("ask"); }
+  if(e.target.id==="addLog"){
+    const q = $("#lq").value.trim(); if(!q){ $("#logMsg").textContent = "اكتب السؤال أولًا."; return; }
+    S.log.push({id:Date.now().toString(36),q,a:$("#la").value.trim(),s:$("#ls").value,n:1,ts:Date.now(),d:new Date().toLocaleDateString("ar-SA-u-ca-gregory-nu-arab",{day:"numeric",month:"long"})});
+    scheduleSave(); renderLog(); $("#logMsg").textContent = "دُوِّن السؤال."; return;
+  }
+  const card = e.target.closest("[data-log]");
+  if(card){ const x = S.log.find(y=>y.id===card.dataset.log);
+    if(e.target.closest("[data-again]")){ x.n++; x.confirm=false; scheduleSave(); $("#logList").innerHTML = logItems($("#lsearch").value.trim()); }
+    if(e.target.closest("[data-del]")){ if(x.confirm){ S.log = S.log.filter(y=>y!==x); scheduleSave(); renderLog(); } else { x.confirm = true; $("#logList").innerHTML = logItems($("#lsearch").value.trim()); } }
+  }
+});
+view.addEventListener("input", e=>{
+  const t = e.target;
+  if(t.id==="mins"||t.id==="pph"){ S.settings[t.id] = Number(t.value); scheduleSave(); t.previousElementSibling.querySelector(".rangeval").textContent = t.id==="mins" ? n(t.value)+" دقيقة" : n(t.value)+" صفحة في الساعة"; $("#weekSum").textContent = weekSummary(); $("#planSec").innerHTML = planHTML(); return; }
+  if(t.id==="custom"){ S.settings.custom = t.value; scheduleSave(); return; }
+  if(t.matches("[data-read]")){ const id = t.closest("[data-book]").dataset.book; const g = prog(id); g.read = Math.max(0, Number(t.value)||0); if(g.st==="todo" && g.read>0) g.st="reading"; scheduleSave(); return; }
+  if(t.matches("[data-out]")){ const id = t.closest("[data-book]").dataset.book; const g = prog(id); g.out = t.value; t.closest(".card").querySelector("[data-note]").innerHTML = noteFor(g); scheduleSave(); return; }
+  if(t.closest("[data-qa]") && t.dataset.i!==undefined){ qa(S.askBook).a[Number(t.dataset.i)] = t.value; scheduleSave(); updateMeter(); return; }
+  if(t.id==="lsearch"){ $("#logList").innerHTML = logItems(t.value.trim()); return; }
+});
+view.addEventListener("change", e=>{
+  const t = e.target;
+  if(t.name==="q"){ S.settings.q = t.value==="custom" ? "custom" : Number(t.value); scheduleSave(); renderBuild(); if(t.value==="custom") $("#custom")?.focus(); return; }
+  if(t.id==="custom"){ renderBuild(); return; }
+  if(t.matches("[data-read]") && tab==="track"){ renderTrack(); return; }
+  if(t.id==="askSel"){ S.askBook = t.value; scheduleSave(); renderAsk(); return; }
+  if(t.dataset.unk!==undefined){ qa(S.askBook).unk[Number(t.dataset.unk)] = t.checked; scheduleSave(); renderAsk(); return; }
+  if(t.id==="chkSum"){ qa(S.askBook).sum = t.checked; scheduleSave(); updateMeter(); return; }
+  if(t.id==="chkObj"){ qa(S.askBook).obj = t.checked; scheduleSave(); updateMeter(); return; }
+});
+
+/* ---------- Claude features (تعمل داخل Claude فقط، وتختفي تلقائيًا على GitHub Pages) ---------- */
+let aiCtl = null;
+const errCopy = c => ({not_granted:"لم يُسمح لهذه الصفحة باستخدام Claude.",rate_limited:"طلبات كثيرة الآن، جرّب بعد قليل.",invalid_json:"جاء الرد بصيغة غير متوقعة، جرّب مرة أخرى.",refused:"لم يتمكن Claude من الإجابة عن هذا الطلب.",session_expired:"سجّل الدخول مرة أخرى."})[c] || "تعذّر الوصول إلى Claude الآن، جرّب مرة أخرى.";
+async function aiSuggest(){
+  const q = S.settings.custom.trim(), status = $("#aiStatus"), btn = $("#aiSuggest");
+  if(q.length<8){ status.textContent = "اكتب سؤالك أولًا بجملة كاملة."; return; }
+  btn.disabled = true; status.textContent = "يفكر في سؤالك...";
+  const lib = LIB.filter(b=>memberOf(b,S.settings.field)).map(b=>`${b.id} | ${b.t} | ${b.a}`).join("\n");
+  const prompt = `أنت مرشد قراءة لقارئ عربي جاد غير متخصص. سؤاله المركزي: «${q}». الحقل: ${FIELD_NAMES[S.settings.field]}.
+مكتبة متاحة (المعرّف | العنوان | المؤلف):
+${lib}
+
+اختر من المكتبة حتى ٥ كتب تخدم سؤاله أكثر من غيرها، واقترح حتى كتابين إضافيين من خارجها لهما ترجمة عربية معروفة (لا تخترع كتبًا).
+أجب بـ JSON فقط بهذا الشكل:
+{"lens":"فقرة من جملتين بالعربية: كيف يقرأ المسار بعين سؤاله","picks":[{"id":"معرّف من المكتبة","why":"سطر واحد: ماذا يضيف لسؤاله"}],"extras":[{"title":"","author":"","pages":200,"why":"سطر واحد"}]}`;
+  try{
+    const res = await sampleFn.json(prompt,{cache:{gcTime:3600000}});
+    const ids = new Set(LIB.map(b=>b.id));
+    S.ai = {field:S.settings.field, lens:String(res.lens||""), picks:(Array.isArray(res.picks)?res.picks:[]).filter(p=>ids.has(String(p.id))).slice(0,5).map(p=>({id:String(p.id),why:String(p.why||"")})),
+      extras:(Array.isArray(res.extras)?res.extras:[]).slice(0,2).map(x=>({title:String(x.title||""),author:String(x.author||""),pages:Number(x.pages)||200,why:String(x.why||"")})).filter(x=>x.title)};
+    scheduleSave(); renderBuild();
+  }catch(e){ if(e.code==="not_granted"||e.code==="sampling_disabled"){ $("#aiBox").hidden = true; } status.textContent = errCopy(e.code); btn.disabled = false; }
+}
+async function aiTest(){
+  const books = allBooks(), b = books.find(x=>x.id===S.askBook), r = qa(b.id);
+  const out = $("#aiOut"), btn = $("#aiTest"), stop = $("#aiStop");
+  if(!r.a.some(x=>x.trim())){ out.textContent = "اكتب إجابة واحدة على الأقل، فالاختبار يبدأ مما كتبته."; return; }
+  aiCtl = new AbortController(); btn.disabled = true; stop.hidden = false; out.textContent = "يقرأ إجاباتك...";
+  const answers = ASKQ.map((q,i)=>`${q.t}\n${r.unk[i]?"(لا أعرف بعد)":(r.a[i].trim()||"(فارغ)")}`).join("\n\n");
+  const prompt = `أنت محاور سقراطي يساعد قارئًا عربيًا غير متخصص على اختبار فهمه لكتاب «${b.t}» لـ${b.a}.
+هذه إجاباته على أسئلة المساءلة:
+
+${answers}
+
+بالعربية الفصحى الواضحة، وفي أقل من ٢٠٠ كلمة:
+١. حدّد في جملتين أين يبدو فهمه متينًا وأين يبدو سطحيًا أو غير دقيق، مع تصحيح مختصر إن وجدت خطأ واضحًا في عرض الكتاب.
+٢. اطرح ثلاثة أسئلة محددة تختبر فهمه، لا يُجاب عنها بالحفظ بل بالتفكير. لا تجب عنها.
+بلا عناوين ولا تنسيق Markdown.`;
+  try{ await sampleFn(prompt,{signal:aiCtl.signal,cache:false,onText:({text})=>{ out.textContent = text; }}); }
+  catch(e){ out.textContent = e.text || ""; if(e.code!=="cancelled") out.textContent += (out.textContent?"\n\n":"") + errCopy(e.code); if(e.code==="not_granted"||e.code==="sampling_disabled") $("#aiAsk").hidden = true; }
+  btn.disabled = false; stop.hidden = true;
+}
+
+/* ---------- boot ---------- */
+setTab("build");
+(async()=>{
+  if(!window.claude?.use) return;
+  claude.use("sample").then(fn=>{ sampleFn = fn; if(fn){ const a=$("#aiBox"); if(a) a.hidden=false; const b=$("#aiAsk"); if(b) b.hidden=false; } }).catch(()=>{});
+  try{
+    const [db,user] = await Promise.all([claude.use("db"),claude.use("user")]);
+    if(!db || !user) return;
+    const uid = await user.id(); if(!uid) return;
+    const ref = db.doc("data/users/"+uid+"/state");
+    const timer = setTimeout(()=>setPill(false,"تعذّر الوصول إلى حسابك، والنسخة محفوظة في هذا المتصفح"),10000);
+    const snap = await ref.get(); clearTimeout(timer);
+    dbRef = ref;
+    if(snap.exists && snap.data().state && !dirty){
+      S = hydrate(snap.data().state);
+      try{ localStorage.setItem(LSKEY, JSON.stringify(S)); }catch(e){}
+      setTab(tab);
+    } else if(dirty || S.plan || S.log.length){ saveRemote(); }
+    setPill(true);
+  }catch(e){ setPill(false); }
+})();
+</script>
+</body>
+</html>
